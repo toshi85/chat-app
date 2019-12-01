@@ -5,16 +5,18 @@
 |password|string|null: false|
 |nickname|string|index: true,,null: false|
 ### Association
-- has_many :messages
 - has_many :comments
+- has_many :groups_users
+- has_many :groups, through :groups_users
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|string|index: true,null: false|
+|name|string|index: true,null: false|
 ### Association
-- has_many :messages
 - has_many :comments
+- has_many :groups_users
+- has_many :users, through :groups_users
 
 ## groups_usersテーブル
 |Column|Type|Options|
@@ -28,7 +30,7 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
+|text|text||
 |image|text||
 |user_id|integer|null: false, foreign_key: true|
 |message_id|integer|null: false, foreign_key: true|
