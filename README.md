@@ -11,7 +11,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|index: true,null: false|
+|user|string|index: true,null: false|
 ### Association
 - has_many :messages
 - has_many :comments
